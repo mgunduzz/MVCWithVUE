@@ -1,0 +1,63 @@
+﻿<style>
+    .card {
+        width: 15rem;
+        cursor: pointer;
+    }
+
+    .card-text ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+        justify-content: space-between;
+    }
+
+    .card-body {
+        font-size: 12px;
+        background-color: #ececec;
+        height: 100px;
+    }
+
+    .card img {
+        padding: 0;
+        height: 278px;
+    }
+
+    .card-body .price {
+        color: #e97c19;
+        font-weight: 700;
+        font-size: 15px;
+        margin-top: 5px;
+    }
+</style>
+<script type="text/javascript">
+    Vue.component('vue-product', {
+        props: {
+            name: String,
+            img: String,
+            price: String,
+            id : Number
+        },
+        template: '#vue-product-template'
+    });
+</script>
+<script type="text/template" id="vue-product-template">
+    <a v-bind:href="'/product/' + id" style="color:black; text-decoration:unset;">
+        <div v-bind:id="id" v-bind:name="name">
+            <div class="card">
+                <img v-bind:src="img" class="card-img-top bg-light border-bottom">
+                <div class="card-body">
+                    <p class="card-text h-100">
+                        <ul class="h-100">
+                            <li style="height:50%;">{{ name }}</li>
+                            <li class="price">{{ price }}</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </a>
+</script>

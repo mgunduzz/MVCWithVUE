@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="app">
+    <vue-product-container>
+    </vue-product-container>
+</div>
+
+@section Scripts {
+
+    <partial name="~/Views/Shared/Components/Products/_Product.cshtml" />
+    <partial name="~/Views/Shared/Components/Products/_ProductsContainer.cshtml" />
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app'
+        })
+    </script>
+}
